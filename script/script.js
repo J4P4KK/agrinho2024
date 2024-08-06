@@ -9,7 +9,7 @@
         $('#temp').text(json.observations[0].metric.temp);
         $('#pressure').text(json.observations[0].metric.pressure);
         $('#heatindex').text(json.observations[0].metric.heatIndex);
-        $('#heatindex').text(json.observations[0].metric.dewpt);
+        $('#dewpt').text(json.observations[0].metric.dewpt);
         $('#humidity').text(json.observations[0].humidity);
         $('#preciprate').text(json.observations[0].metric.precipRate);
         $('#preciptotal').text(json.observations[0].metric.precipTotal);
