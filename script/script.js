@@ -18,6 +18,6 @@
         var err = textStatus + ", " + error;
         console.log( "Request Failed: " + err );
     }).then(function() {
-        setTimeout(update, 5000);
+        setTimeout(update, 30000);
     });
 })(); 
