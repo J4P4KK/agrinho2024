@@ -1,7 +1,5 @@
-
-
 (function update() {
-    $.getJSON( "https://api.weather.com/v2/pws/observations/current?stationId=IJANDA6&format=json&units=m&apiKey=dedf3b2a74b24e319f3b2a74b26e3128&numericPrecision=decimal")
+    $.getJSON( "https://api.weather.com/v2/pws/observations/current?stationId=IJANDA6&format=json&units=m&apiKey=88425c513b244dec825c513b241dec73&numericPrecision=decimal")
     .done(function( json ) {
         //console.log( "JSON Data: " + json );
         $('#windgust').text(json.observations[0].metric.windGust);
@@ -21,3 +19,33 @@
         setTimeout(update, 30000);
     });
 })(); 
+
+function textIA(str) {
+    var settings = {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDdXcVm_3NQ4nhlQ41Vl8-m-9SGhiYhfPY",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": str
+                }
+              ]
+            }
+          ]
+        }),
+      };
+      
+      $.ajax(settings)
+        .done(function (response) {
+            // console.log(response);
+            $('#textIA').text(response.candidates[0].content.parts[0].text);
+        });
+}
+
+textIA('A temperatura em Jandaia do Sul está 23°C. Descreva em apenas 30 palavras, qual a recomendação agronômica para o cultivo de soja nesta condição climática');

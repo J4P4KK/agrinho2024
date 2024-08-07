@@ -1,6 +1,15 @@
 .destaq {
-    color: rgb(12, 93, 199);
+    color: rgb(13, 110, 253);
     font-family: sans-serif;
+}
+
+.alert-primary {
+  background-color: rgba(13, 110, 253, 0.1);
+  border-color: rgb(13, 110, 253);
+}
+
+.alert-primary h4 {
+  color: rgb(13, 110, 253);
 }
 
 /* Color of the links BEFORE scroll */
